@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Navigation" tests="7" skipped="0" failures="0" errors="0" timestamp="2024-03-11T21:04:13" hostname="MARCE" time="35.74">
+  <properties/>
+  <testcase name="I can access the subpages through the navigation #1" classname="Navigation" time="6.919"/>
+  <testcase name="I can access the subpages through the navigation #2" classname="Navigation" time="5.167"/>
+  <testcase name="I can access the subpages through the navigation #3" classname="Navigation" time="3.57"/>
+  <testcase name="I can access the subpages through the navigation #4" classname="Navigation" time="4.679"/>
+  <testcase name="I can access the subpages through the navigation #5" classname="Navigation" time="5.109"/>
+  <testcase name="Courses are presented correctly to potential customers" classname="Navigation" time="6.754"/>
+  <testcase name="Users can select a plan when signing up" classname="Navigation" time="3.542"/>
+  <system-out><![CDATA[
+@Navigation
+Scenario Outline: I can access the subpages through the navigation ?[90m# src/test/resources/FreeRangeNavegation.feature:28?[0m
+  ?[32mGiven ?[0m?[32mI navigate to www.freerangetesters.com?[0m                     ?[90m# steps.FreeRangeSteps.iNavigateToFRT()?[0m
+  ?[32mWhen ?[0m?[32mI go to ?[0m?[32m?[1mCursos?[0m?[32m using the navigation bar?[0m                     ?[90m# steps.FreeRangeSteps.navigationBarUse(java.lang.String)?[0m
+
+@Navigation
+Scenario Outline: I can access the subpages through the navigation ?[90m# src/test/resources/FreeRangeNavegation.feature:29?[0m
+  ?[32mGiven ?[0m?[32mI navigate to www.freerangetesters.com?[0m                     ?[90m# steps.FreeRangeSteps.iNavigateToFRT()?[0m
+  ?[32mWhen ?[0m?[32mI go to ?[0m?[32m?[1mRecursos?[0m?[32m using the navigation bar?[0m                   ?[90m# steps.FreeRangeSteps.navigationBarUse(java.lang.String)?[0m
+
+@Navigation
+Scenario Outline: I can access the subpages through the navigation ?[90m# src/test/resources/FreeRangeNavegation.feature:30?[0m
+  ?[32mGiven ?[0m?[32mI navigate to www.freerangetesters.com?[0m                     ?[90m# steps.FreeRangeSteps.iNavigateToFRT()?[0m
+  ?[32mWhen ?[0m?[32mI go to ?[0m?[32m?[1mUdemy?[0m?[32m using the navigation bar?[0m                      ?[90m# steps.FreeRangeSteps.navigationBarUse(java.lang.String)?[0m
+
+@Navigation
+Scenario Outline: I can access the subpages through the navigation ?[90m# src/test/resources/FreeRangeNavegation.feature:31?[0m
+  ?[32mGiven ?[0m?[32mI navigate to www.freerangetesters.com?[0m                     ?[90m# steps.FreeRangeSteps.iNavigateToFRT()?[0m
+  ?[32mWhen ?[0m?[32mI go to ?[0m?[32m?[1mMentorÃ­as?[0m?[32m using the navigation bar?[0m                  ?[90m# steps.FreeRangeSteps.navigationBarUse(java.lang.String)?[0m
+
+@Navigation
+Scenario Outline: I can access the subpages through the navigation ?[90m# src/test/resources/FreeRangeNavegation.feature:32?[0m
+  ?[32mGiven ?[0m?[32mI navigate to www.freerangetesters.com?[0m                     ?[90m# steps.FreeRangeSteps.iNavigateToFRT()?[0m
+  ?[32mWhen ?[0m?[32mI go to ?[0m?[32m?[1mBlog?[0m?[32m using the navigation bar?[0m                       ?[90m# steps.FreeRangeSteps.navigationBarUse(java.lang.String)?[0m
+
+@Navigation @Courses
+Scenario: Courses are presented correctly to potential customers ?[90m# src/test/resources/FreeRangeNavegation.feature:35?[0m
+  ?[32mGiven ?[0m?[32mI navigate to www.freerangetesters.com?[0m                   ?[90m# steps.FreeRangeSteps.iNavigateToFRT()?[0m
+  ?[32mWhen ?[0m?[32mI go to ?[0m?[32m?[1mCursos?[0m?[32m using the navigation bar?[0m                   ?[90m# steps.FreeRangeSteps.navigationBarUse(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mI select Introduction al Testing?[0m                           ?[90m# steps.FreeRangeSteps.navigateToIntro()?[0m
+
+@Navigation @Plans
+Scenario: Users can select a plan when signing up             ?[90m# src/test/resources/FreeRangeNavegation.feature:40?[0m
+  ?[32mGiven ?[0m?[32mI navigate to www.freerangetesters.com?[0m                ?[90m# steps.FreeRangeSteps.iNavigateToFRT()?[0m
+  ?[32mWhen ?[0m?[32mThe client selects Elegir Plan?[0m                         ?[90m# steps.FreeRangeSteps.selectElegirPlan()?[0m
+  ?[32mThen ?[0m?[32mThe user can validate the options in the checkout page?[0m ?[90m# steps.FreeRangeSteps.validateCheckoutPlans()?[0m
+]]></system-out>
+  <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+]]></system-err>
+</testsuite>

@@ -1,0 +1,38 @@
+plugins {
+    id("java")
+}
+
+group = "org.example"
+version = "1.0-SNAPSHOT"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(platform("org.junit:junit-bom:5.9.1"))
+    testImplementation("org.junit.jupiter:junit-jupiter")
+
+    //librerias implementadas: selenium JVM: java - testng - cucumber java - cucumber junit 4.
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.18.1'
+    testImplementation 'org.testng:testng:7.9.0'
+    implementation 'io.cucumber:cucumber-java:7.15.0'
+    testImplementation 'io.cucumber:cucumber-junit:7.15.0'
+
+    //libreria que nos facilita mantener actualizada automaticamente la version de chromedriver
+    //sin necesidad de actualizarlas manualmente e ir a setiar cada vez que cambia la version de chrome
+    // https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
+    implementation 'io.github.bonigarcia:webdrivermanager:5.6.3'
+
+}
+
+//tasks.named('test') {
+//    systemProperty "cucumber.options", System.getProperty("cucumber.options")
+//    systemProperties System.getProperties(); //Linea para colocar en las propiedades del sistema los tags.
+//}
+
+test {
+    //Esta linea permite que se ejecuten los tags o filtre las pruebas que necesito que corran
+    systemProperty 'cucumber.options', System.properties.getProperty('cucumber.options')
+}
